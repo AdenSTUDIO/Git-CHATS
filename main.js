@@ -1,9 +1,9 @@
 var express = require('express');
 var app = express();
 
-app.use('/JS', express.static('JavaScript'))
+app.use('/js', express.static('JavaScript'));
 
-var server = require('https').createServer(app);
+var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 
 app.get('/', (req, res) => {
@@ -15,7 +15,7 @@ app.get('/server', (req, res) => {
 });
 
 io.on('connection', (socket) => {
-  console.log('a user connected');
+  console.log(socket.id + ' connected');
 });
 
-server.listen(3000);
+server.listen(process.env.PORT || 3000);
