@@ -2,15 +2,15 @@
   "name": "git-chats",
   "version": "1.0.0",
   "description": "",
-  "main": "script.js",
+  "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node main.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AdenSTUDIO/Git-CHATS.git"
   },
-  "author": "Aden Studio",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/AdenSTUDIO/Git-CHATS/issues"

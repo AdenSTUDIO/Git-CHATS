@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var PORT = process.env.PORT || 8888;
 
 app.use('/JS', express.static('JavaScript'));
 
@@ -17,4 +18,4 @@ io.on('connection', (socket) => {
   console.log('a user connected');
 });
 
-server.listen(process.env.PORT || 8888);
+server.listen(PORT);
