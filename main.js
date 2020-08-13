@@ -1,5 +1,6 @@
-var app = require('express')();
-var http = require('http').createServer(app);
+var express = require('express');
+var app = express();
+var http = require('https').createServer(app);
 
 app.get('/', (req, res) => {
   res.send('<h1>Hello world</h1>');
