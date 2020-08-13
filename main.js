@@ -1,8 +1,7 @@
 var express = require('express');
 var app = express();
-var PORT = process.env.PORT || 8888;
 
-app.use('/JS', express.static('JavaScript'));
+app.use('/JS', express.static('JavaScript'))
 
 var server = require('https').createServer(app);
 var io = require('socket.io')(server);
@@ -10,6 +9,7 @@ var io = require('socket.io')(server);
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/views/client.html');
 });
+
 app.get('/server', (req, res) => {
   res.sendFile(__dirname + '/views/server.html');
 });
@@ -18,4 +18,4 @@ io.on('connection', (socket) => {
   console.log('a user connected');
 });
 
-server.listen(PORT);
+server.listen(3000);
