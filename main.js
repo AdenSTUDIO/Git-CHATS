@@ -1,9 +1,17 @@
 var express = require('express');
 var app = express();
+
+app.use('/js', express.static('JavaScript'));
+
 var http = require('http').createServer(app);
 
 app.get('/', (req, res) => {
-  res.send('<h1>Hello world</h1>');
+  res.sendFile(__dirname + '/views/client.html');
 });
+
+app.get('/server', (req, res) => {
+    res.sendFile(__dirname + '/views/server.html');
+  });
+  
 
 http.listen(process.env.PORT);
