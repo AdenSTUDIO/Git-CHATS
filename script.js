@@ -13,4 +13,4 @@ io.on('connection', (socket) => {
   console.log('a user connected');
 });
 
-http.listen(process.env.PORT || 8888);
+http.listen(8888);
